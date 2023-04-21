@@ -1,0 +1,107 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(7, 7, 42);
+}
+.clock{
+    position: relative;
+    top: 100px;
+    width: 500px;
+    height: 500px;
+    display: flex;
+justify-content: center;
+align-items: center;
+border: 2px solid rgb(6, 6, 73);
+border-radius: 300px;
+box-shadow: 0 -5px 15px rgb(10, 14, 235),
+inset 0 -15px 15px rgb(5, 3, 23) ,
+0 15px 15px rgb(19, 19, 219),
+inset 0 15px 15px rgb(0, 0, 0);
+}
+.clock span{
+    position: absolute;
+    inset: 20px;
+    color: rgb(216, 197, 197);
+    text-align: center;
+    transform: rotate(calc(30deg * var(--i)));
+}
+.d{
+    font-size: 2em;
+    opacity: 1;
+    font-weight: 600;
+    display: inline-block;
+     transform: rotate(calc(-30deg * var(--i)));
+}
+.clock::before{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    z-index: 10000;
+}
+.clock .hour,
+.clock .min,
+.clock .sec{
+    position: absolute;
+}
+.clock .hour, .hr{
+    width: 150px;
+    height: 150px;
+}
+.clock .min, .mn{
+    width: 158px;
+    height: 180px;
+}
+.clock .sec, .sc{
+    width: 230px;
+    height: 230px;
+}
+.hr,.mn,.sc{
+    display: flex;
+    justify-content: center;
+/*align-items: center;*/
+position: absolute;
+border-radius: 50%;
+}
+.hr::before{
+    content: '';
+    position: absolute;
+    width: 10px;
+height: 70px;
+background-color: rgb(241, 9, 48);
+z-index: 10;
+border-radius: 6px 6px 0px 0px;
+}
+.mn::before{
+    content: '';
+    position: absolute;
+    width: 6px;
+height: 90px;
+background-color: rgb(238, 77, 8);
+z-index: 11;
+border-radius: 6px 6px 0px 0px;
+}
+.sc::before{
+    content: '';
+    position: absolute;
+    width: 4px;
+height: 120px;
+background-color: rgb(3, 243, 55);
+z-index: 16;
+border-radius: 6px 6px 0px 0px;
+}
+@media only screen and(min-width:100px) and (max-width:530px) {
+.clock{
+    width: 100%;
+}
+}
